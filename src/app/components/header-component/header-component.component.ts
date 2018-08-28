@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {StravaService} from "../../services/strava.service";
+import {StravaStats} from "../../model/strava-stats";
 
 @Component({
   selector: 'app-header-component',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponentComponent implements OnInit {
 
-  constructor() { }
+  strava_stats: StravaStats;
+
+  strava_stats_loaded: boolean;
+
+  constructor(private strava_service: StravaService) { }
 
   ngOnInit() {
+     this.strava_service.getStravaStats()
+         .subscribe((data: StravaStats) => {this.strava_stats = {
+              all_run_totals: data['all_run_totals']
+
+         }
+         this.strava_stats_loaded = true;
+     });
   }
 
 }

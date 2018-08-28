@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './components/header-component/header-component.component';
+import { StravaService } from './services/strava.service';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { HeaderComponentComponent } from './components/header-component/header-c
     HeaderComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StravaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
