@@ -18,8 +18,8 @@ export class HeaderComponentComponent implements OnInit {
   ngOnInit() {
      this.strava_service.getStravaStats()
          .subscribe((data: StravaStats) => {this.strava_stats = {
-              all_run_totals: data['all_run_totals']
-
+              all_run_totals: data['all_run_totals'],
+              all_ride_totals: data['all_ride_totals']
          }
          this.strava_stats_loaded = true;
      });

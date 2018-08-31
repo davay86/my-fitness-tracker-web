@@ -1,10 +1,12 @@
-import {AllRunTotals} from "./all-run-totals";
+import {AllTotals} from "./all-totals";
 export class StravaStats {
 
-  public all_run_totals: AllRunTotals;
+  public all_run_totals: AllTotals;
+  public all_ride_totals: AllTotals;
 
-  constructor(allRuntotals: AllRunTotals){
-    this.all_run_totals = allRuntotals;
+  constructor(allRunTotals: AllTotals, allRideTotals: AllTotals){
+    this.all_run_totals = allRunTotals;
+    this.all_ride_totals = allRideTotals;
   }
 
 

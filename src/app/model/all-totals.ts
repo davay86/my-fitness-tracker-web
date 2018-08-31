@@ -1,4 +1,4 @@
-export class AllRunTotals {
+export class AllTotals {
 
     public count: number;
 

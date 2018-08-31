@@ -1,7 +1,7 @@
 <div style="height: 100px; background-color: #d58512; color: white;" >
 
-  <div class="h1 center-block" style="margin-left: 40%;display: inline-block; ">My Fitness Tracker</div>
-
-  <div class="h4" style="float: right; margin-right: 20%; padding-top: 40px; display: inline-block" *ngIf="strava_stats_loaded">Run total: {{ strava_stats.all_run_totals.count }}</div>
+  <div class="h1 text-center">My Fitness Tracker</div>
+  <div class="h4" style="float: left; margin-left: 10%; "  *ngIf="strava_stats_loaded">Ride total: {{ strava_stats.all_ride_totals.count }}</div>
+  <div class="h4" style="float: right; margin-right: 10%; " *ngIf="strava_stats_loaded">Run total: {{ strava_stats.all_run_totals.count }}</div>
 
 </div>
