@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {MinutePerMileRun} from "../model/minute-per-mile-run";
 
 const STRAVA_SERVER = 'http://localhost:8089/strava-service';
 
@@ -12,5 +14,9 @@ export class StravaService {
 
   getStravaStats(){
       return this.http.get(STRAVA_SERVER + '/getStats');
+  }
+
+  getMinutePerMileRuns(){
+      return this.http.get(STRAVA_SERVER + '/getMinPerMileRuns');
   }
 }
